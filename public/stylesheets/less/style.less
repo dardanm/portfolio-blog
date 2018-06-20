@@ -1,0 +1,304 @@
+// @import 'extra-links', 'extra', 'normalize';
+
+// fonts
+@font-stack: Helvetica, sans-serif;
+
+// colors
+@blue-grey-lighter: #8ba9b9;
+@blue: #58c3fa;
+@blue-lighter: #57d2fa;
+@grey-dark: #686868;
+@grey-light: #a8a8a8;
+@red: #fa5757;
+
+// main font colors
+@text-primary: @grey-dark;
+@text-p: @grey-light;
+
+// legend colors
+@all-color: @blue-grey-lighter;
+@app-color: @blue;
+@web-color: @blue-lighter;
+@design-color: @red;
+
+html,
+body {
+  font: 100% @font-stack;
+}
+
+html {
+  color: @text-primary;
+  margin: 0;
+  padding: 0;
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+
+    #content {
+      flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from
+    	letting these items shrink to smaller than their content's
+    	default minimum size. */
+    }
+  }
+}
+
+h1 {
+  color: #5e5e5e;
+  font-size: 2rem;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  margin: 50px 0 40px 0;
+  display: block;
+
+  // main title
+  h1.title {
+    font-weight: bold;
+    font-size: 2rem;
+    display: inline-block;
+    padding: 3px 10px 3px 10px;
+    margin: 5px 0;
+  }
+
+  // personal photo
+  img.avatar {
+    margin: 10px 0 10px 0;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+}
+
+#legend {
+  text-align: center;
+  background-image: url(../img/other/doodles3.png);
+  height: 199px;
+
+  // category big buttons
+  .cat-big-btns {
+    font-size: 1rem;
+    display: inline-block;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    color: white;
+    padding: 5px 15px 5px 15px;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    // all
+    &.all-cat-btn-big {
+      background: @all-color;
+    }
+    // application
+    &.app-cat-btn-big {
+      background: @app-color;
+    }
+    // website
+    &.web-cat-btn-big {
+      background: @web-color;
+    }
+    // design
+    &.design-cat-btn-big {
+      background: @design-color;
+    }
+  }
+
+  // category small buttons
+  .cat-small-btns {
+    border: 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    display: inline-block;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    color: white;
+    padding: 3px 10px 3px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    border-color: #d94b4b;
+  }
+}
+
+#projects {
+  text-align: center;
+  //background-image: url(../img/other/doodles.png);
+  padding-bottom: 100px;
+  background-image: url('../img/other/doodles.png');
+
+  .project {
+    max-width: 700px;
+    padding: 5px 5px 10px 5px;
+    margin: 10px;
+    display: inline-block;
+    border-style: solid;
+    border-color: #e7e7e7;
+    border-width: 2px 0px 5px 0px;
+    box-shadow: 0px 2px 4px 0px #bcbcbc;
+    border-radius: 8px;
+    background-color: white;
+    border-radius: 0px;
+    margin-bottom: 30px;
+    border-bottom-color: #dcdcdc;
+  }
+
+  // project description
+  .p-desc {
+    margin: 0px 0 10px 0;
+    color: @text-p;
+    border-bottom-style: dotted;
+    border-bottom-width: 3px;
+    border-color: #e7e7e7;
+    font-style: italic;
+    padding: 10px;
+  }
+
+  // project details
+  .p-details {
+    text-align: left;
+    padding: 10px;
+  }
+
+  // image previews
+  .img-preview {
+    height: auto;
+    display: inline-block;
+    margin: auto;
+    padding: 0 10px 0 10px;
+    height: 600px;
+    width: 320px;
+  }
+
+  // project titles background, styling
+  .strip {
+    display: block;
+    margin: 0;
+    padding: 3px 0px 3px 0px;
+    color: white;
+    font-size: 1.2rem;
+    //border-bottom-style: solid;
+    //border-bottom-width: 5px;
+    //border-radius: 5px;
+
+    // application
+    &.app-strip {
+      background-color: @app-color;
+      border-color: #4da8d6;
+      //text-shadow: 0px 0.14rem #349ccf;
+    }
+
+    // design
+    &.design-strip {
+      background-color: @design-color;
+      border-color: #d94b4b;
+      //text-shadow: 0px 0.14rem #d02c2d;
+    }
+  }
+}
+
+#footer {
+  background-color: white;
+  text-align: center;
+  color: #d2d2d2;
+  font-size: 1em;
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from
+	letting these items shrink to smaller than their
+	content's default minimum size. */
+  padding: 10px 0 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    margin: 30px;
+    margin-top: 15px;
+  }
+  #projects {
+    padding-bottom: 30px;
+  }
+  #projects .project {
+    max-width: 100%;
+    width: 100%;
+    padding: 5px 0px 10px 0px;
+    margin: 0px;
+    border-radius: 0px;
+    margin-bottom: 30px;
+
+    .strip {
+      border-radius: 0;
+    }
+  }
+
+  #legend {
+    background-image: none;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .bottom_img {
+    height: 0px;
+  }
+  #footer {
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#contents {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-family: 'Roboto', sans-serif;
+  color: #414141;
+}
+
+#countries-form {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.submit-but {
+  color: white;
+  background-color: #5bbd59;
+  border: 0;
+  width: 80px;
+}
+
+.post {
+  background-color: #d9d9d9;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.post-title {
+  margin: 0;
+  padding: 0;
+}
+.post-body {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 0.85em;
+}
+
+textarea {
+  height: 100px;
+  border: 0;
+}
+
+.form-headings {
+}
+
+select {
+  width: 100%;
+}

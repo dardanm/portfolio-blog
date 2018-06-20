@@ -1,0 +1,18 @@
+{
+  "name": "day12_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "sequelize": "^4.37.10"
+  }
+}
