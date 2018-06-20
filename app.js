@@ -36,14 +36,13 @@ var Users = sequelize.define(
   }
 );
 
+Users.sync();
+
 app.get('/form', function(req, res) {
   var query = req.query.term;
 
   res.render('form');
 });
-
-let titles = [];
-let bodies = [];
 
 app.post('/submit', function(req, res) {
   var t = req.body;
@@ -53,45 +52,14 @@ app.post('/submit', function(req, res) {
     body: `${t.subject}`
   });
 
-  titles = [];
-  bodies = [];
-
-  Users.sync().then(function() {
-    Users.findAll({
-      //
-    }).then(function(rows) {
-      for (var i = 0; i < rows.length; i++) {
-        var columnData = rows[i].dataValues;
-        var title = columnData.title;
-        var body = columnData.body;
-
-        titles.push(title);
-        bodies.push(body);
-      }
-    });
-  });
-
   res.render('submit');
 });
 
 app.get('/posts', function(req, res) {
-  Users.sync().then(function() {
-    Users.findAll({
-      //
-    }).then(function(rows) {
-      for (var i = 0; i < rows.length; i++) {
-        var columnData = rows[i].dataValues;
-        var title = columnData.title;
-        var body = columnData.body;
-
-        titles.push(title);
-        bodies.push(body);
-      }
+  Users.findAll().then(function(rows) {
+    res.render('posts', {
+      rows: rows
     });
-  });
-  res.render('posts', {
-    titles: titles,
-    bodies: bodies
   });
 });
 

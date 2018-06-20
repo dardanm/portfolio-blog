@@ -13,12 +13,12 @@
     <a href="form">Create New Post</a></br>
     </br>
 
-    <% for(var i = 0; i < titles.length; i++) { %>
+    <% for(var i = 0; i < rows.length; i++) { %>
       <div class="post">
-        <h1 class="post-title"><%= [i+1] + '. ' + titles[i];%></h1>
+        <h1 class="post-title"><%= [i+1] + '. ' + rows[i].title;%></h1>
         </br>
         <p class="post-body">
-          <%= bodies[i];%>
+          <%= rows[i].body;%>
         </p>
         </br>
         </br>
